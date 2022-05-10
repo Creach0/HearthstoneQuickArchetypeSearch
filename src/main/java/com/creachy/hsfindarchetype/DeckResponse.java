@@ -2,10 +2,10 @@ package com.creachy.hsfindarchetype;
 
 import java.util.ArrayList;
 
-public class DeckDefinition {
+public class DeckResponse {
     private ArrayList<Card> commonCards;
 
-    public DeckDefinition(ArrayList<Card> commonCards, ArrayList<Card> uncommonCards) {
+    public DeckResponse(ArrayList<Card> commonCards, ArrayList<Card> uncommonCards) {
         this.commonCards = commonCards;
         this.uncommonCards = uncommonCards;
     }

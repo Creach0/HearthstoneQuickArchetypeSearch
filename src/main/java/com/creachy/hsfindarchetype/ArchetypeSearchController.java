@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class ArchetypeSearchController {
 
     @GetMapping("/findCommonDecklist")
-    public DeckDefinition findCommonDecklist(@RequestParam(value = "query") String query) {
-        return new DeckDefinition(new ArrayList<Card>(), new ArrayList<Card>());
+    public DeckResponse findCommonDecklist(@RequestParam(value = "query") String query) {
+        return new DeckResponse(new ArrayList<Card>(), new ArrayList<Card>());
     }
 }
