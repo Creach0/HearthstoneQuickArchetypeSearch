@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 
 public class HearthstoneCardsCacheServiceTests {
     HearthstoneCardsCacheService hearthstoneCardsCache;
@@ -29,6 +30,7 @@ public class HearthstoneCardsCacheServiceTests {
 
         hearthstoneCardsCache = new HearthstoneCardsCacheService(restTemplate);
         verify(restTemplate).getForEntity(anyString(), eq(Card[].class)); //caches on startup
+        verifyNoMoreInteractions(restTemplate);
     }
 
     @Test
