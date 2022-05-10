@@ -80,12 +80,20 @@ public class HSReplayCacheServiceTests {
     }
 
     @Test
-    public void directDeckSearch() {
+    public void directDeckSearchSuccess() {
         verifyNoMoreInteractions(restTemplate); //shouldn't refresh cache
         ArrayList<Deck> decks = hsReplayCacheService.getDecksByArchetypeId(162); //3 warrior decks
 
         assertNotNull(decks);
         assertEquals(3, decks.size());
+    }
+
+    @Test
+    public void directDeckSearchFailure() {
+        verifyNoMoreInteractions(restTemplate); //shouldn't refresh cache
+        ArrayList<Deck> decks = hsReplayCacheService.getDecksByArchetypeId(312341); //3 warrior decks
+
+        assertTrue(decks.isEmpty());
     }
 
     @Test
