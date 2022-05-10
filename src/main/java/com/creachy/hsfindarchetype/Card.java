@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Card {
-    String id;
-    String name;
-    String text;
+    private String id;
+    private String name;
+    private String text;
 
     public String getId() {
         return id;
