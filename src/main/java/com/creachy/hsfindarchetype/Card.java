@@ -1,16 +1,19 @@
 package com.creachy.hsfindarchetype;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Card {
-    Integer dbfId;
+    String id;
     String name;
     String text;
 
-    public Integer getDbfId() {
-        return dbfId;
+    public String getId() {
+        return id;
     }
 
-    public void setDbfId(Integer dbfId) {
-        this.dbfId = dbfId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
