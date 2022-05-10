@@ -15,8 +15,8 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 
-public class HearthstoneCardsCacheServiceTests {
-    HearthstoneCardsCacheService hearthstoneCardsCache;
+public class CardsCacheServiceTests {
+    CardsCacheService cardsCache;
     @Mock
     RestTemplate restTemplate;
 
@@ -28,26 +28,26 @@ public class HearthstoneCardsCacheServiceTests {
         MockitoAnnotations.openMocks(this);
         Mockito.doReturn(responseEntity).when(restTemplate).getForEntity(anyString(), eq(Card[].class));
 
-        hearthstoneCardsCache = new HearthstoneCardsCacheService(restTemplate);
+        cardsCache = new CardsCacheService(restTemplate);
         verify(restTemplate).getForEntity(anyString(), eq(Card[].class)); //caches on startup
         verifyNoMoreInteractions(restTemplate);
     }
 
     @Test
     public void contextLoads() {
-        assertNotNull(hearthstoneCardsCache);
+        assertNotNull(cardsCache);
     }
 
     @Test
     public void testDirectMatch() {
-        Card card = hearthstoneCardsCache.getCardById("AT_003");
+        Card card = cardsCache.getCardById("AT_003");
         assertNotNull(card);
         assertEquals("Fallen Hero", card.getName());
     }
 
     @Test
     public void testNoMatch() {
-        Card card = hearthstoneCardsCache.getCardById("bad id");
+        Card card = cardsCache.getCardById("bad id");
         assertNull(card);
     }
 }

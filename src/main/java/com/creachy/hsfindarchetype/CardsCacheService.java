@@ -6,12 +6,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class HearthstoneCardsCacheService {
+public class CardsCacheService {
     private RestTemplate restTemplate;
     private Card[] cardCache;
 
     @Autowired
-    public HearthstoneCardsCacheService(RestTemplate restTemplate) {
+    public CardsCacheService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
 
         refreshCache();
