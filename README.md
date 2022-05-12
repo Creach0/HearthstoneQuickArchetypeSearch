@@ -1,7 +1,7 @@
 # HearthstoneQuickArchetypeSearch
 This is a service that enables the user to search for a name of a common Hearthstone deck archetype, and recieve as a response the most popular version of the deck list.
 
-It's a useful quick reference for players who don't want to have to pull up HSReplay and find their opponent's deck to see what they are running.
+It's a useful quick reference for players who don't want to have to pull up HSReplay and find their opponent's deck to see what they are running. Though I mainly built this with a plan to develop some kind of front-end interface for it, like a website or Discord bot.
 
 It works by caching the current status of https://hsreplay.net/ 's Deck and Archetype lists, and comparing card IDs against https://hearthstonejson.com/ 's card API.
 
