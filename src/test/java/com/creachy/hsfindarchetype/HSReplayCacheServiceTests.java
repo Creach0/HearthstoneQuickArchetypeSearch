@@ -26,7 +26,7 @@ public class HSReplayCacheServiceTests {
 
     @BeforeEach
     public void setup() {
-        Archetype[] dummyArchetypes = HSReplayDummyDataGenerator.dummyArchetypeResponse();
+        Archetype[] dummyArchetypes = HSReplayDummyDataGenerator.dummyArchetypesResponse();
         DecksResponseContainer dummyDecks = HSReplayDummyDataGenerator.dummyDecksResponse();
         ResponseEntity responseEntity = new ResponseEntity(dummyArchetypes, HttpStatus.OK); // dummy response entity
 

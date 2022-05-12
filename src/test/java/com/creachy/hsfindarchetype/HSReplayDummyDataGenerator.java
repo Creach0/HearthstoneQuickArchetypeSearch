@@ -346,7 +346,7 @@ public class HSReplayDummyDataGenerator {
         }
     }
 
-    public static Archetype[] dummyArchetypeResponse() {
+    public static Archetype[] dummyArchetypesResponse() {
         String responseJSON =
                 "[\n" +
                 "    {\n" +
@@ -420,6 +420,42 @@ public class HSReplayDummyDataGenerator {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             return objectMapper.readValue(responseJSON, Archetype[].class);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static Archetype dummyArchetypeResponse() {
+        String responseJSON =
+                "    {\n" +
+                "        \"id\": 7,\n" +
+                "        \"name\": \"Token Druid\",\n" +
+                "        \"player_class\": 2,\n" +
+                "        \"player_class_name\": \"DRUID\",\n" +
+                "        \"url\": \"/archetypes/7/token-druid\",\n" +
+                "        \"standard_ccp_signature_core\": {\n" +
+                "            \"as_of\": \"2021-06-15T19:51:02.276Z\",\n" +
+                "            \"format\": 2,\n" +
+                "            \"components\": [\n" +
+                "                63030,\n" +
+                "                63502,\n" +
+                "                56684,\n" +
+                "                56687,\n" +
+                "                69591,\n" +
+                "                61450,\n" +
+                "                56677,\n" +
+                "                61964,\n" +
+                "                61449,\n" +
+                "                56686\n" +
+                "            ]\n" +
+                "        },\n" +
+                "        \"wild_ccp_signature_core\": null\n" +
+                "    }";
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            return objectMapper.readValue(responseJSON, Archetype.class);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
             return null;

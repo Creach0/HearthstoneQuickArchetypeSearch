@@ -40,14 +40,14 @@ public class CardsCacheServiceTests {
 
     @Test
     public void testDirectMatch() {
-        Card card = cardsCache.getCardById("AT_003");
+        Card card = cardsCache.getCardById(2545);
         assertNotNull(card);
         assertEquals("Fallen Hero", card.getName());
     }
 
     @Test
     public void testNoMatch() {
-        Card card = cardsCache.getCardById("bad id");
+        Card card = cardsCache.getCardById(123124314);
         assertNull(card);
     }
 }

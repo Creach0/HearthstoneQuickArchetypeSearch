@@ -103,4 +103,38 @@ public class HearthstoneCardsDummyDataGenerator {
             return null;
         }
     }
+
+
+    public static Card dummyCardResponse() {
+        String cardJSON = "    {\n" +
+                "        \"artist\": \"Gabor Szikszai\",\n" +
+                "        \"cardClass\": \"MAGE\",\n" +
+                "        \"collectible\": true,\n" +
+                "        \"cost\": 1,\n" +
+                "        \"dbfId\": 2572,\n" +
+                "        \"fl" +
+                "avor\": \"Now with 100% more blast!\",\n" +
+                "        \"id\": \"AT_004\",\n" +
+                "        \"mechanics\": [\n" +
+                "            \"RECEIVES_DOUBLE_SPELLDAMAGE_BONUS\"\n" +
+                "        ],\n" +
+                "        \"name\": \"Arcane Blast\",\n" +
+                "        \"rarity\": \"EPIC\",\n" +
+                "        \"referencedTags\": [\n" +
+                "            \"SPELLPOWER\"\n" +
+                "        ],\n" +
+                "        \"set\": \"TGT\",\n" +
+                "        \"spellSchool\": \"ARCANE\",\n" +
+                "        \"text\": \"Deal $2 damage to a minion. This spell gets double bonus from <b>Spell Damage</b>.\",\n" +
+                "        \"type\": \"SPELL\"\n" +
+                "    }";
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            return objectMapper.readValue(cardJSON, Card.class);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

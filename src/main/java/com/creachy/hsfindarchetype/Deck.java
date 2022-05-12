@@ -3,8 +3,6 @@ package com.creachy.hsfindarchetype;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Deck {
     @JsonProperty("deck_list")
@@ -16,7 +14,6 @@ public class Deck {
     @JsonProperty("win_rate")
     private Double winRate;
 
-    //ArrayList<Integer[]>
     public String getCardIds() {
         return cardIds;
     }

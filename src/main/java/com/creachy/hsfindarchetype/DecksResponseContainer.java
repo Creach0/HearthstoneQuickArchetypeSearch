@@ -9,7 +9,9 @@ import java.util.*;
 /* * * * * * * * * * * *
  *     this sucks      *
  * * * * * * * * * * * */
-
+/**
+ * This is just a container that represents the contents of HSReplay's API response JSON.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 class DataResponseContainer {
     private Map<String, Deck[]> data;
@@ -30,6 +32,9 @@ class DataResponseContainer {
     }
 }
 
+/**
+ * This is just a container that represents the contents of HSReplay's API response JSON.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 class DecksResponseContainer {
     @JsonProperty("series")

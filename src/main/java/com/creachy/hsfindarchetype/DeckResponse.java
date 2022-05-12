@@ -1,22 +1,35 @@
 package com.creachy.hsfindarchetype;
 
+import org.apache.commons.lang3.tuple.Pair;
+
 import java.util.ArrayList;
 
 public class DeckResponse {
-    private ArrayList<Card> commonCards;
+    private String archetypeName;
+    private int totalGames;
+    private double winrate;
+    private ArrayList<Pair<Integer, Card>> coreCards;
 
-    public DeckResponse(ArrayList<Card> commonCards, ArrayList<Card> uncommonCards) {
-        this.commonCards = commonCards;
-        this.uncommonCards = uncommonCards;
+    public DeckResponse(String archetypeName, int totalGames, double winrate, ArrayList<Pair<Integer, Card>> coreCards) {
+        this.archetypeName = archetypeName;
+        this.totalGames = totalGames;
+        this.winrate = winrate;
+        this.coreCards = coreCards;
     }
 
-    private ArrayList<Card> uncommonCards;
-
-    public ArrayList<Card> getCommonCards() {
-        return commonCards;
+    public ArrayList<Pair<Integer, Card>> getCoreCards() {
+        return coreCards;
     }
 
-    public ArrayList<Card> getUncommonCards() {
-        return uncommonCards;
+    public int getTotalGames() {
+        return totalGames;
+    }
+
+    public String getArchetypeName() {
+        return archetypeName;
+    }
+
+    public double getWinrate() {
+        return winrate;
     }
 }
