@@ -8,7 +8,7 @@ It's a useful quick reference for players who don't want to have to pull up HSRe
 It works by caching the current status of https://hsreplay.net/ 's Deck and Archetype lists, and comparing card IDs against https://hearthstonejson.com/ 's card API.
 
 ## Using this service:
-A call can be made to <code>/findCommonDecklist?query={query}</code> to find the most common version of a given archetype. The name doesn't have to be exact, but it should be close.
+A call can be made to <code>/findCommonDecklist?query={query}</code> to find the most common version of a given archetype. The name doesn't have to be exact, but it should be close (Note the image, for example).
 
 The following information will be returned:
 
