@@ -44,6 +44,10 @@ public class DeckSearchService {
         Archetype archetype = deckCache.getArchetypeByName(deckName);
         ArrayList<Deck> decks = deckCache.getDecksByArchetypeId(archetype.getId());
 
+        if (decks.isEmpty()){
+            return null;
+        }
+
         //decks are default sorted by winrate, so we need not sort if popularity = false
         Deck deck = decks.get(0);
 
@@ -69,8 +73,7 @@ public class DeckSearchService {
         ArrayList<Pair<Integer, Card>> result = new ArrayList<>();
         ArrayList<ArrayList<Integer>> cardIds = null;
         try {
-            cardIds = objectMapper.readValue(deck.getCardIds(), new TypeReference<>() {
-            });
+            cardIds = objectMapper.readValue(deck.getCardIds(), new TypeReference<ArrayList<ArrayList<Integer>>>() {});
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
